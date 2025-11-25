@@ -262,13 +262,11 @@
           <p style="font-size: 1rem; margin: 6px 0 6px 20px; color: #cbd5e1; line-height: 1.6;">• <strong>Social Media:</strong> Friend suggestions based on finding users closest to your profile (in feature space)</p>
           <p style="font-size: 1rem; margin: 6px 0 6px 20px; color: #cbd5e1; line-height: 1.6;">• <strong>E-commerce:</strong> Recommendation algorithms find products "closest" to your preferences</p>
           <p style="font-size: 1rem; margin: 6px 0 6px 20px; color: #cbd5e1; line-height: 1.6;">• <strong>Air Traffic Control:</strong> Safety systems monitor which aircraft are closest to each other</p>
-          <p style="font-size: 1rem; margin: 6px 0 6px 20px; color: #cbd5e1; line-height: 1.6;">• <strong>Food Supply Chain (AGRI-TECH):</strong> Finding closest distribution centers to farms/consumers</p>
         </div>
       </div>
 
-      <div class="card" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(217, 119, 6, 0.06) 100%); border-color: rgba(245, 158, 11, 0.3);">
-        <h3 style="color: #fbbf24; margin-bottom: 12px;">🌾 Why Algorithms Matter in Agri-Tech:</h3>
-        <p style="font-size: 1.05rem; line-height: 1.7; margin: 8px 0; color: #e0f2fe;">Modern agriculture is DATA-DRIVEN. Farmers need efficient logistics: route optimization (closest warehouses), supply chain management. Food insecurity solutions require optimizing food distribution networks. <strong style="color: #fbbf24;">Efficient algorithms = faster decision-making = better resource allocation.</strong></p>
+     
+       
       </div>
     </section>
 
@@ -452,11 +450,6 @@
         </div>
       </div>
 
-      <div class="vision-box" style="background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);">
-        <h3 style="margin: 0 0 12px 0; font-size: 1.3rem;">🌍 The Bigger Picture:</h3>
-        <p style="margin: 8px 0; font-weight: 500; font-size: 1.05rem; line-height: 1.7;">Computer Science is the foundation of innovation across ALL fields. Agriculture benefits from algorithms as much as traditional tech. This project demonstrates why both presenters' career paths converge on algorithmic thinking.</p>
-        <p style="margin: 16px 0 0 0; font-weight: 600; font-size: 1.15rem; line-height: 1.7; background: rgba(255,255,255,0.2); padding: 16px; border-radius: 8px; text-align: center;">"Whether optimizing tech infrastructure or food distribution networks, understanding efficient algorithms like the closest-pair problem is essential for solving real-world challenges."</p>
-      </div>
       
       <div class="card" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.08) 100%); border-color: rgba(245, 158, 11, 0.4); text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 12px;">🙏</div>
@@ -536,20 +529,78 @@
       return Math.sqrt(dx * dx + dy * dy);
     }
 
-    function findClosestPair(points) {
-      let minDist = Infinity;
-      let pair = [null, null];
-      for (let i = 0; i < points.length; i++) {
-        for (let j = i + 1; j < points.length; j++) {
-          const dist = euclideanDistance(points[i], points[j]);
-          if (dist < minDist) {
-            minDist = dist;
-            pair = [points[i], points[j]];
-          }
-        }
+   // Helper: Calculate Euclidean distance between two points
+function distance(p1, p2) {
+  const dx = p1[0] - p2[0];
+  const dy = p1[1] - p2[1];
+  return Math.sqrt(dx * dx + dy * dy);
+}
+
+// Brute force for 3 or fewer points (base case)
+function bruteForce(points) {
+  let minDist = Infinity, pair = [null, null];
+  for (let i = 0; i < points.length; i++) {
+    for (let j = i + 1; j < points.length; j++) {
+      let dist = distance(points[i], points[j]);
+      if (dist < minDist) {
+        minDist = dist;
+        pair = [points[i], points[j]];
       }
-      return {pair, minDist};
     }
+  }
+  return { pair, minDist };
+}
+
+// Helper for Combine step
+function stripClosest(strip, d) {
+  let minDist = d, pair = null;
+  for (let i = 0; i < strip.length; i++) {
+    for (let j = i + 1; j < strip.length && (strip[j][1] - strip[i][1]) < minDist; j++) {
+      let dist = distance(strip[i], strip[j]);
+      if (dist < minDist) {
+        minDist = dist;
+        pair = [strip[i], strip[j]];
+      }
+    }
+  }
+  return pair ? { pair, minDist } : null;
+}
+
+// Main Divide & Conquer algorithm
+function closestPairRecursive(px, py) {
+  const n = px.length;
+  if (n <= 3) return bruteForce(px);
+
+  const mid = Math.floor(n / 2);
+  const midX = px[mid][0];
+
+  // Split py into left/right by x<divide>
+  const pyl = py.filter(p => p[0] <= midX);
+  const pyr = py.filter(p => p[0] > midX);
+
+  const leftResult = closestPairRecursive(px.slice(0, mid), pyl);
+  const rightResult = closestPairRecursive(px.slice(mid), pyr);
+
+  let d = Math.min(leftResult.minDist, rightResult.minDist);
+  let result = leftResult.minDist < rightResult.minDist ? leftResult : rightResult;
+
+  const strip = py.filter(p => Math.abs(p[0] - midX) < d);
+  const stripResult = stripClosest(strip, d);
+
+  if (stripResult && stripResult.minDist < d) {
+    return stripResult;
+  }
+  return result;
+}
+
+// User-facing wrapper
+function findClosestPair(points) {
+  // px: sorted by x, py: sorted by y
+  const px = [...points].sort((a, b) => a[0] - b[0]);
+  const py = [...points].sort((a, b) => a[1] - b[1]);
+  return closestPairRecursive(px, py);
+}
+
 
     function drawPoints(canvas, points, closestPair) {
       const ctx = canvas.getContext('2d');
