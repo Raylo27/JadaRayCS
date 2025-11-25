@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Closest-Pair Problem: Divide and Conquer - PowerPoint Presentation</title>
+  <title>Closest-Pair Problem: Divide and Conquer - PowerPoint Presentation V6</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
     
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -138,7 +139,7 @@
       background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
       padding: 16px 24px;
       border-radius: 10px;
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: 12px;
       color: #0f172a;
       width: 600px;
@@ -167,6 +168,24 @@
     .demo-btn:active {
       transform: translateY(0);
     }
+    .code-block {
+      background: #1e293b;
+      color: #e0f2fe;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 12px 0;
+      overflow-x: auto;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .nav-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
     @media (max-width: 600px) {
       .container {
         padding: 6px;
@@ -191,6 +210,7 @@
       </div>
     </div>
 
+
     <!-- Slide 1: Title Slide -->
     <section class="slide p-16 col" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); position: relative;">
       <div style="position: absolute; top: 20px; right: 20px; font-size: 4rem; opacity: 0.15;">🌾💻</div>
@@ -204,6 +224,7 @@
         <p style="font-size:1.1rem; color:#94a3b8;">November 25, 2025</p>
       </div>
     </section>
+
 
     <!-- Slide 2: Introduction -->
     <section class="slide" data-slide="2" style="display: none;">
@@ -221,6 +242,7 @@
         </ul>
       </div>
 
+
       <div class="card" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(22, 163, 74, 0.06) 100%);">
         <h3 style="color: #4ade80; margin-bottom: 12px;">Presenter 2: Raylen Williams 👨‍🌾</h3>
         <p style="font-size: 1.05rem; margin: 8px 0; color: #cbd5e1; line-height: 1.7;"><strong style="color: #4ade80;">Classification:</strong> Junior in Computer Science</p>
@@ -235,6 +257,7 @@
       </div>
     </section>
 
+
     <!-- Slide 3: Background & Significance -->
     <section class="slide" data-slide="3" style="display: none;">
       <h2 style="display: flex; align-items: center; gap: 12px;">📚 Background &amp; Significance</h2>
@@ -243,6 +266,7 @@
         <h3 style="margin-bottom: 12px;">What is the Closest-Pair Problem?</h3>
         <p style="font-size: 1.05rem; line-height: 1.7; margin: 8px 0; color: #e0f2fe;">Given a set of points in space, find the two points that are <strong>closest</strong> to each other. This is a FUNDAMENTAL problem in computational geometry. Simple problem statement, but finding an optimal solution is non-trivial.</p>
       </div>
+
 
       <div class="card" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(22, 163, 74, 0.06) 100%);">
         <h3 style="margin-bottom: 12px; color: #4ade80;">🔍 Why We Use It (In Depth):</h3>
@@ -265,10 +289,11 @@
         </div>
       </div>
 
-     
-       
+
+      
       </div>
     </section>
+
 
     <!-- Slide 4: Algorithm Explanation -->
     <section class="slide" data-slide="4" style="display: none;">
@@ -286,6 +311,7 @@
         </div>
         <p style="font-size: 1.05rem; margin: 8px 0; color: #f87171; font-weight: 600;">Time Complexity: O(n²) — Not practical for large datasets (like our 1000+ point dataset)</p>
       </div>
+
 
       <div class="card" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(22, 163, 74, 0.06) 100%); border-color: rgba(34, 197, 94, 0.3);">
         <h3 style="color: #4ade80; margin-bottom: 12px;">✅ The Divide &amp; Conquer Solution - Why It Works:</h3>
@@ -308,6 +334,7 @@
         </div>
       </div>
 
+
       <div class="card" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(217, 119, 6, 0.06) 100%); border-color: rgba(245, 158, 11, 0.3);">
         <h3 style="color: #fbbf24; margin-bottom: 12px;">🎯 When to Use Each Approach:</h3>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
@@ -327,6 +354,7 @@
         </div>
       </div>
 
+
       <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.06) 100%);">
         <h3 style="color: #60a5fa; margin-bottom: 8px;">💡 Significance of Why It Works:</h3>
         <p style="font-size: 1rem; margin: 6px 0; color: #cbd5e1; line-height: 1.6;">• <strong>Sorting provides structure:</strong> Exploits spatial locality</p>
@@ -336,51 +364,47 @@
       </div>
     </section>
 
+
     <!-- Slide 5: Implementation Details -->
     <section class="slide" data-slide="5" style="display: none;">
       <h2 style="display: flex; align-items: center; gap: 12px;">💻 Implementation Details</h2>
       
       <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.06) 100%);">
         <h3 style="color: #60a5fa; margin-bottom: 12px;">📐 Key Function 1: Distance Calculation</h3>
-        <pre style="background:#1e293b;color:#e0f2fe;border-radius:7px;overflow-x:auto;padding:16px;font-size:0.95rem;margin:12px 0;line-height:1.6;"><code>def distance(p1, p2):
-    """Calculate Euclidean distance between two points"""
-    return ((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)**0.5</code></pre>
+        <pre style="background:#1e293b;color:#e0f2fe;border-radius:7px;overflow-x:auto;padding:16px;font-size:0.95rem;margin:12px 0;line-height:1.6;"><code>function distance(p1, p2) {
+    const dx = p1[0] - p2[0];
+    const dy = p1[1] - p2[1];
+    return Math.sqrt(dx * dx + dy * dy);
+}</code></pre>
         <p style="font-size: 1rem; margin: 8px 0; color: #cbd5e1; line-height: 1.6;"><strong style="color: #60a5fa;">Why Euclidean:</strong> Real-world distances use this formula. Example: (0,0) to (3,4) = √(9+16) = 5 units</p>
       </div>
 
+
       <div class="card" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(22, 163, 74, 0.06) 100%);">
-        <h3 style="color: #4ade80; margin-bottom: 12px;">🔄 Key Function 2: Recursive Closest Pair</h3>
-        <pre style="background:#1e293b;color:#e0f2fe;border-radius:7px;overflow-x:auto;padding:16px;font-size:0.88rem;margin:12px 0;line-height:1.5;"><code>def closest_pair_recursive(px, py):
-    n = len(px)
-    
-    # BASE CASE: Small datasets use brute force (faster overhead)
-    if n &lt;= 3:
-        return min_distance_brute_force(px)
-    
-    # DIVIDE: Split into left and right
-    mid = n // 2
-    midpoint = px[mid]
-    
-    # CONQUER: Solve both halves independently
-    pyl = [p for p in py if p[0] &lt;= midpoint[0]]
-    pyr = [p for p in py if p[0] &gt; midpoint[0]]
-    
-    left_result = closest_pair_recursive(px[:mid], pyl)
-    right_result = closest_pair_recursive(px[mid:], pyr)
-    
-    # Find minimum of two halves
-    d = min(left_result[0], right_result[0])
-    
-    # COMBINE: Check strip around dividing line
-    strip = [p for p in py if abs(p[0] - midpoint[0]) &lt; d]
-    for i in range(len(strip)):
-        j = i + 1
-        while j &lt; len(strip) and (strip[j][1] - strip[i][1]) &lt; d:
-            d = min(d, distance(strip[i], strip[j]))
-            j += 1
-    
-    return (d, closest_pair)</code></pre>
+        <h3 style="color: #4ade80; margin-bottom: 12px;">🔄 Key Function 2: Recursive Closest Pair (Divide &amp; Conquer)</h3>
+        <pre style="background:#1e293b;color:#e0f2fe;border-radius:7px;overflow-x:auto;padding:16px;font-size:0.78rem;margin:12px 0;line-height:1.4;"><code>function closestPairRecursive(px, py) {
+  const n = px.length;
+  if (n <= 3) return bruteForce(px);
+  
+  const mid = Math.floor(n / 2);
+  const midX = px[mid][0];
+  
+  const pyl = py.filter(p => p[0] <= midX);
+  const pyr = py.filter(p => p[0] > midX);
+  
+  const leftResult = closestPairRecursive(px.slice(0, mid), pyl);
+  const rightResult = closestPairRecursive(px.slice(mid), pyr);
+  
+  let d = Math.min(leftResult.minDist, rightResult.minDist);
+  let result = leftResult.minDist < rightResult.minDist ? leftResult : rightResult;
+  
+  const strip = py.filter(p => Math.abs(p[0] - midX) < d);
+  const stripResult = stripClosest(strip, d);
+  
+  return stripResult && stripResult.minDist < d ? stripResult : result;
+}</code></pre>
       </div>
+
 
       <div class="card" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(217, 119, 6, 0.06) 100%); border-color: rgba(245, 158, 11, 0.3);">
         <h3 style="color: #fbbf24; margin-bottom: 12px;">📊 Complexity Analysis:</h3>
@@ -388,6 +412,7 @@
         <p style="font-size: 1rem; margin: 6px 0; color: #cbd5e1; line-height: 1.6;">• <strong style="color: #fbbf24;">Space:</strong> O(n) — for sorting and recursion stack</p>
         <p style="font-size: 1.05rem; margin: 10px 0 6px 0; color: #fbbf24; font-weight: 600;">→ Much better than O(n²) brute force for large n</p>
       </div>
+
 
       <div class="card" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.12) 0%, rgba(147, 51, 234, 0.06) 100%);">
         <h3 style="color: #c084fc; margin-bottom: 12px;">🎯 Why We Implemented It This Way:</h3>
@@ -397,26 +422,56 @@
       </div>
     </section>
 
+
     <!-- Slide 6: Demonstration -->
     <section class="slide" data-slide="6" style="display: none;">
-      <h2 style="display: flex; align-items: center; gap: 12px;">🎨 Demonstration</h2>
+      <h2 style="display: flex; align-items: center; gap: 12px;">🎨 Demonstration - Live Divide &amp; Conquer Algorithm</h2>
+      
       <div style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(56, 189, 248, 0.08) 100%); padding: 16px; border-radius: 12px; margin-bottom: 16px; border: 1px solid rgba(6, 182, 212, 0.3);">
-        <p style="font-size: 1.1rem; margin: 0; line-height: 1.6; color: #e0f2fe;"><span style="color: #38bdf8; font-weight: 600;">⚡ Large Dataset Visualization:</span> This visualization proves the algorithm works on large datasets efficiently. Watch how it instantly finds the closest pair among <strong style="color: #38bdf8;">1000 points</strong>. This demonstrates the power of the O(n log n) divide &amp; conquer approach versus the impractical O(n²) brute force.</p>
+        <p style="font-size: 1rem; margin: 0; line-height: 1.6; color: #e0f2fe;"><span style="color: #38bdf8; font-weight: 600;">⚡ Large Dataset Visualization:</span> This visualization proves the Divide &amp; Conquer algorithm works on large datasets efficiently. Watch how it instantly finds the closest pair among <strong style="color: #38bdf8;">1000 points</strong>. This demonstrates the power of the O(n log n) approach versus the impractical O(n²) brute force.</p>
       </div>
+
+      <div class="card" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(22, 163, 74, 0.06) 100%); border-color: rgba(34, 197, 94, 0.3); margin-bottom: 16px;">
+        <h3 style="color: #4ade80; margin-bottom: 12px;">🔍 Algorithm Code (JavaScript Implementation):</h3>
+        <pre style="background:#1e293b;color:#e0f2fe;border-radius:7px;overflow-x:auto;padding:12px;font-size:0.72rem;margin:12px 0;line-height:1.3;"><code>// Helper: Closest points in strip (combine step)
+function stripClosest(strip, d) {
+  let minDist = d, pair = null;
+  for (let i = 0; i < strip.length; i++) {
+    for (let j = i + 1; j < strip.length && 
+         (strip[j][1] - strip[i][1]) < minDist; j++) {
+      let dist = distance(strip[i], strip[j]);
+      if (dist < minDist) {
+        minDist = dist;
+        pair = [strip[i], strip[j]];
+      }
+    }
+  }
+  return pair ? { pair, minDist } : null;
+}
+
+// Main: Divide & Conquer
+function findClosestPair(points) {
+  const px = [...points].sort((a, b) => a[0] - b[0]);
+  const py = [...points].sort((a, b) => a[1] - b[1]);
+  return closestPairRecursive(px, py);
+}</code></pre>
+      </div>
+      
       <div class="demo-canvas-box">
         <canvas id="demo-canvas" width="650" height="500"></canvas>
         <div class="demo-info" id="demo-info"></div>
-        <button class="demo-btn" id="demo-btn" type="button">🔄 Generate New Points</button>
+        <button class="demo-btn" id="demo-btn" type="button">🔄 Generate New Points (1000)</button>
       </div>
       <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 16px;">
         <div style="background: rgba(56, 189, 248, 0.1); padding: 12px 20px; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.3);">
           <span style="color:#38bdf8; font-weight: 600;">🔵 Blue Points:</span> <span style="color:#cbd5e1;">All 1000 data points</span>
         </div>
         <div style="background: rgba(239, 68, 68, 0.1); padding: 12px 20px; border-radius: 8px; border: 1px solid rgba(239, 68, 68, 0.3);">
-          <span style="color:#ef4444; font-weight: 600;">🔴 Red Points:</span> <span style="color:#cbd5e1;">Closest pair (highlighted and connected)</span>
+          <span style="color:#ef4444; font-weight: 600;">🔴 Red Points:</span> <span style="color:#cbd5e1;">Closest pair (highlighted)</span>
         </div>
       </div>
     </section>
+
 
     <!-- Slide 7: Conclusion -->
     <section class="slide" data-slide="7" style="display: none; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); position: relative;">
@@ -436,6 +491,7 @@
         </div>
       </div>
 
+
       <div class="card" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(22, 163, 74, 0.06) 100%);">
         <h3 style="color: #4ade80; margin-bottom: 12px;">💼 Career Relevance:</h3>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
@@ -450,6 +506,9 @@
         </div>
       </div>
 
+
+    
+      </div>
       
       <div class="card" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.08) 100%); border-color: rgba(245, 158, 11, 0.4); text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 12px;">🙏</div>
@@ -458,9 +517,82 @@
       </div>
     </section>
 
+
   </div>
   <script>
-    // Slide navigation
+    // ============================================================
+    // DIVIDE & CONQUER ALGORITHM FUNCTIONS
+    // ============================================================
+    
+    function distance(p1, p2) {
+      const dx = p1[0] - p2[0];
+      const dy = p1[1] - p2[1];
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    function bruteForce(points) {
+      let minDist = Infinity, pair = [null, null];
+      for (let i = 0; i < points.length; i++) {
+        for (let j = i + 1; j < points.length; j++) {
+          let dist = distance(points[i], points[j]);
+          if (dist < minDist) {
+            minDist = dist;
+            pair = [points[i], points[j]];
+          }
+        }
+      }
+      return { pair, minDist };
+    }
+
+    function stripClosest(strip, d) {
+      let minDist = d, pair = null;
+      for (let i = 0; i < strip.length; i++) {
+        for (let j = i + 1; j < strip.length && (strip[j][1] - strip[i][1]) < minDist; j++) {
+          let dist = distance(strip[i], strip[j]);
+          if (dist < minDist) {
+            minDist = dist;
+            pair = [strip[i], strip[j]];
+          }
+        }
+      }
+      return pair ? { pair, minDist } : null;
+    }
+
+    function closestPairRecursive(px, py) {
+      const n = px.length;
+      if (n <= 3) return bruteForce(px);
+
+      const mid = Math.floor(n / 2);
+      const midX = px[mid][0];
+
+      const pyl = py.filter(p => p[0] <= midX);
+      const pyr = py.filter(p => p[0] > midX);
+
+      const leftResult = closestPairRecursive(px.slice(0, mid), pyl);
+      const rightResult = closestPairRecursive(px.slice(mid), pyr);
+
+      let d = Math.min(leftResult.minDist, rightResult.minDist);
+      let result = leftResult.minDist < rightResult.minDist ? leftResult : rightResult;
+
+      const strip = py.filter(p => Math.abs(p[0] - midX) < d);
+      const stripResult = stripClosest(strip, d);
+
+      if (stripResult && stripResult.minDist < d) {
+        return stripResult;
+      }
+      return result;
+    }
+
+    function findClosestPair(points) {
+      const px = [...points].sort((a, b) => a[0] - b[0]);
+      const py = [...points].sort((a, b) => a[1] - b[1]);
+      return closestPairRecursive(px, py);
+    }
+
+    // ============================================================
+    // SLIDE NAVIGATION
+    // ============================================================
+    
     let currentSlide = 1;
     const totalSlides = 7;
 
@@ -470,14 +602,13 @@
       if (n < 1) currentSlide = 1;
       else currentSlide = n;
 
-      slides.forEach((slide, index) => {
+      slides.forEach((slide) => {
         slide.style.display = 'none';
       });
       slides[currentSlide - 1].style.display = 'flex';
       
       document.getElementById('slide-counter').textContent = `${currentSlide} / ${totalSlides}`;
       
-      // Update button states
       document.getElementById('prev-btn').style.opacity = currentSlide === 1 ? '0.5' : '1';
       document.getElementById('prev-btn').style.cursor = currentSlide === 1 ? 'not-allowed' : 'pointer';
       document.getElementById('next-btn').style.opacity = currentSlide === totalSlides ? '0.5' : '1';
@@ -492,13 +623,11 @@
       if (currentSlide > 1) showSlide(currentSlide - 1);
     }
 
-    // Keyboard navigation
     document.addEventListener('keydown', function(e) {
       if (e.key === 'ArrowRight') nextSlide();
       if (e.key === 'ArrowLeft') prevSlide();
     });
 
-    // Button hover effects
     document.querySelectorAll('.nav-btn').forEach(btn => {
       btn.addEventListener('mouseenter', function() {
         if (this.style.cursor !== 'not-allowed') {
@@ -512,7 +641,10 @@
       });
     });
 
-    // Demo functions
+    // ============================================================
+    // DEMO VISUALIZATION
+    // ============================================================
+    
     function generateRandomPoints(n, width, height) {
       let points = [];
       for (let i = 0; i < n; i++) {
@@ -523,102 +655,19 @@
       return points;
     }
 
-    function euclideanDistance(p1, p2) {
-      const dx = p1[0] - p2[0];
-      const dy = p1[1] - p2[1];
-      return Math.sqrt(dx * dx + dy * dy);
-    }
-
-   // Helper: Calculate Euclidean distance between two points
-function distance(p1, p2) {
-  const dx = p1[0] - p2[0];
-  const dy = p1[1] - p2[1];
-  return Math.sqrt(dx * dx + dy * dy);
-}
-
-// Brute force for 3 or fewer points (base case)
-function bruteForce(points) {
-  let minDist = Infinity, pair = [null, null];
-  for (let i = 0; i < points.length; i++) {
-    for (let j = i + 1; j < points.length; j++) {
-      let dist = distance(points[i], points[j]);
-      if (dist < minDist) {
-        minDist = dist;
-        pair = [points[i], points[j]];
-      }
-    }
-  }
-  return { pair, minDist };
-}
-
-// Helper for Combine step
-function stripClosest(strip, d) {
-  let minDist = d, pair = null;
-  for (let i = 0; i < strip.length; i++) {
-    for (let j = i + 1; j < strip.length && (strip[j][1] - strip[i][1]) < minDist; j++) {
-      let dist = distance(strip[i], strip[j]);
-      if (dist < minDist) {
-        minDist = dist;
-        pair = [strip[i], strip[j]];
-      }
-    }
-  }
-  return pair ? { pair, minDist } : null;
-}
-
-// Main Divide & Conquer algorithm
-function closestPairRecursive(px, py) {
-  const n = px.length;
-  if (n <= 3) return bruteForce(px);
-
-  const mid = Math.floor(n / 2);
-  const midX = px[mid][0];
-
-  // Split py into left/right by x<divide>
-  const pyl = py.filter(p => p[0] <= midX);
-  const pyr = py.filter(p => p[0] > midX);
-
-  const leftResult = closestPairRecursive(px.slice(0, mid), pyl);
-  const rightResult = closestPairRecursive(px.slice(mid), pyr);
-
-  let d = Math.min(leftResult.minDist, rightResult.minDist);
-  let result = leftResult.minDist < rightResult.minDist ? leftResult : rightResult;
-
-  const strip = py.filter(p => Math.abs(p[0] - midX) < d);
-  const stripResult = stripClosest(strip, d);
-
-  if (stripResult && stripResult.minDist < d) {
-    return stripResult;
-  }
-  return result;
-}
-
-// User-facing wrapper
-function findClosestPair(points) {
-  // px: sorted by x, py: sorted by y
-  const px = [...points].sort((a, b) => a[0] - b[0]);
-  const py = [...points].sort((a, b) => a[1] - b[1]);
-  return closestPairRecursive(px, py);
-}
-
-
     function drawPoints(canvas, points, closestPair) {
       const ctx = canvas.getContext('2d');
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Draw all points in blue (smaller for 1000 points)
       ctx.fillStyle = '#38bdf8';
       for (const pt of points) {
-        // If this is one of the closest pair, skip, will draw separately
         if (closestPair && (pt === closestPair[0] || pt === closestPair[1])) continue;
         ctx.beginPath();
         ctx.arc(pt[0], pt[1], 3, 0, 2*Math.PI);
         ctx.fill();
       }
       
-      // Draw closest pair in red with highlighting
       if (closestPair) {
-        // Draw line between closest pair first
         ctx.beginPath();
         ctx.moveTo(closestPair[0][0], closestPair[0][1]);
         ctx.lineTo(closestPair[1][0], closestPair[1][1]);
@@ -626,21 +675,17 @@ function findClosestPair(points) {
         ctx.lineWidth = 3;
         ctx.stroke();
         
-        // Draw the two closest points with glow effect
         for (const pt of closestPair) {
-          // Outer glow
           ctx.beginPath();
           ctx.arc(pt[0], pt[1], 12, 0, 2*Math.PI);
           ctx.fillStyle = 'rgba(239, 68, 68, 0.2)';
           ctx.fill();
           
-          // Middle glow
           ctx.beginPath();
           ctx.arc(pt[0], pt[1], 8, 0, 2*Math.PI);
           ctx.fillStyle = 'rgba(239, 68, 68, 0.5)';
           ctx.fill();
           
-          // Inner point
           ctx.beginPath();
           ctx.arc(pt[0], pt[1], 5, 0, 2*Math.PI);
           ctx.fillStyle = '#ef4444';
@@ -660,8 +705,8 @@ function findClosestPair(points) {
       demoInfo.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
           <div>
-            <div style="font-size: 1.2rem; margin-bottom: 8px;">📊 <strong>Analyzing ${points.length} points</strong></div>
-            <div style="font-size: 1.15rem; color: #0ea5e9;">✨ <strong>Closest pair found!</strong></div>
+            <div style="font-size: 1.2rem; margin-bottom: 8px;">📊 <strong>Analyzing ${points.length} points with Divide &amp; Conquer</strong></div>
+            <div style="font-size: 1.15rem; color: #0ea5e9;">✨ <strong>Closest pair found instantly!</strong></div>
           </div>
           <div style="text-align: right;">
             <div style="font-size: 1.3rem; font-weight: bold; color: #ef4444; margin-bottom: 4px;">Distance: ${result.minDist.toFixed(2)} units</div>
@@ -672,19 +717,20 @@ function findClosestPair(points) {
       `;
     }
 
-    // Init demo with 1000 points for massive dataset
     let DEMO_POINT_COUNT = 1000;
     let demoPoints = [];
+    
     function regenDemoPoints() {
       const startTime = performance.now();
       demoPoints = generateRandomPoints(DEMO_POINT_COUNT, 650, 500);
       updateDemo(demoPoints, 650, 500);
       const endTime = performance.now();
       const processingTime = (endTime - startTime).toFixed(2);
-      console.log(`Processed ${DEMO_POINT_COUNT} points in ${processingTime}ms`);
+      console.log(`Processed ${DEMO_POINT_COUNT} points in ${processingTime}ms using Divide & Conquer`);
     }
+    
     window.addEventListener('DOMContentLoaded', function() {
-      regenDemoPoints(); // Initial
+      regenDemoPoints();
       document.getElementById('demo-btn').onclick = regenDemoPoints;
     });
   </script>
